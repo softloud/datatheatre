@@ -1,0 +1,6 @@
+game_text
+Click anywhere to start your journey at Y-Corp
+Welcome, Employee #LV426306, to your first day at Y-Corp, where it's for us to know why we need you to mine our data. Press A to attend meetings for the rest of the day. 
+A colleague reviewed your code and found a bug.
+After all that, the pipeline was breaking down because of a missing comma. Good thing you were around to fix that. One less bug to worry about. 
+And then there are the blessed days where somehow it comes together, you see the path through all the doors, and chain together a simple, elegant pipeline that just works. New feature implemented. 
