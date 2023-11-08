@@ -5,20 +5,22 @@ import pandas as pd
 import numpy as np
 from janitor import clean_names
 
+
 # game modules
-from game_fns import set_completion_params, button_press
+import game_fns
+import ui_fns
 
 # Set win conditions
-completion_key = set_completion_params(3,3)
+completion_key = game_fns.set_completion_params(3,3)
 
 
 # Get game text images
-text_img = pd.read_csv("game-text-meta.csv")
+text_img = pd.read_csv("game-data/game-text-meta.csv")
 text_img.head()
 text_files = text_img.file_path.to_list()
 
 # get game event meta information
-event_key = clean_names(pd.read_csv("game-event-key.csv"))
+event_key = clean_names(pd.read_csv("things-to-fiddle-with/game-event-key.csv"))
 
 # pg setup
 pg.init()
@@ -45,15 +47,13 @@ event_name = "invited to start"
 outcomes = []
 
 # UI 
-font = pg.font.SysFont("Courier", 40)
-button_a = font.render("A", True, (0,0,0))
-button_a_rect = button_a.get_rect(
-    center = (display_width * 0.4, display_height * 0.9))
+# ui_fns.make_ui()
 
-button_b = font.render("A", True, (0,0,0))
-button_b_rect = button_a.get_rect(
-    center = (display_width * 0.6, display_height * 0.9))
-
+button_a = ui_fns.Button(int(display_width * 0.4),
+                         int(display_height * 0.9),
+                         text_files[0],
+                         background
+)
 
 # Game
 while running:
@@ -68,30 +68,30 @@ while running:
             # start game prompt
             terminal_text = pg.image.load(text_files[0]).convert()
 
-    # user starts game
+        # user starts game
         if event.type == pg.MOUSEBUTTONDOWN and started == False:
             started = True
             print("mouse button clicked")
             terminal_text = pg.image.load(text_files[1]).convert()
+        
         # test click
         if event.type == pg.MOUSEBUTTONDOWN and started == True:
             terminal_text = pg.image.load(text_files[2]).convert()
             
-            if button_a_rect.collidepoint(event.pos) == True:
-                button_press("A", "meeting", event_key)
+            if button_a.rect.collidepoint(event.pos) == True:
+                # update terminal text
+                # update event name to outcome
+                game_fns.button_press("A", "meeting", event_key)
 
-            if button_b_rect.collidepoint(event.pos) == True:
-                button_press("B", "meeting", event_key)
+            #if button_b_rect.collidepoint(event.pos) == True:
+                # update terminal text
+             #   button_press("B", "meeting", event_key)
 
         # output terminal text        
         background.blit(terminal_text, (display_width * 0.2, display_height * 0.2))
         
         # buttons
-        pg.draw.rect(background, "grey", button_a_rect)  
-        background.blit(button_a, button_a_rect)          
-
-        pg.draw.rect(background, "grey", button_b_rect)  
-        background.blit(button_a, button_b_rect)          
+        button_a.render(background)
       
         
         # if rect.collidepoint(event.pos)

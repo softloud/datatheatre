@@ -9,13 +9,28 @@ Y = 720
 
 # read text in as vector
 game_text_raw <- 
-    read_delim("game_text_raw.txt", delim = "XXX", col_types = "c")
+    read_delim("things-to-fiddle-with/game_text_raw.txt", 
+        delim = "XXX", col_types = "c") |> pull("game_text")
 
 head(game_text_raw)
 
 # read text key as dataframe
-game_meta_raw <- read_csv("game_text_key.txt")
+game_meta_raw <- read_csv("things-to-fiddle-with/game_text_key.csv")
 head(game_meta_raw)
+
+# vectorise over meta table
+game_meta <- game_meta_raw |>
+    mutate(
+        file_path = str_c(
+            "game-text-png/",
+            "img-",
+            game_text_line,
+            "-",
+            game_event,
+            ".png"
+        )
+    )
+
 
 # cleaning
 # trim white space from end?
@@ -41,19 +56,6 @@ this_wb <- image_draw(img) |>
         
 image_write(this_wb, "wb_test.png")
 
-# vectorise over meta table
-game_meta <-
-game_meta_raw |>
-    mutate(
-        file_path = str_c(
-            "game-text-png/",
-            game_event,
-            "-",
-            game_text_line,
-            ".png"
-        )
-    )
-
 make_game_text_png <- function(this_text, png_path){
 this_wb <- image_draw(img) |>
     image_annotate(
@@ -69,9 +71,9 @@ image_write(this_wb, png_path)
 dev.off()
 }
 
-map2(game_text_raw$game_text, game_meta$file_path, make_game_text_png)
+map2(game_text_raw, game_meta$file_path, make_game_text_png)
 
-write_csv(game_meta, "game-text-meta.csv")
+write_csv(game_meta, "game-data/game-text-meta.csv")
 
 # output image meta table
 # - image path

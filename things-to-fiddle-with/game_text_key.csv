@@ -1,0 +1,6 @@
+game_text_line, game_event, description
+1, "start", "invite player to start game"
+2, "welcome", "intro text"
+3, "onboarding", "press a button" 
+4, "bug", "player gets a bug"
+6, "feature", "player completes a feature"

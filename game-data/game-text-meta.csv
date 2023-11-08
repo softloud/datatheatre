@@ -1,0 +1,6 @@
+game_text_line,game_event,description,file_path
+1,start,invite player to start game,game-text-png/img-1-start.png
+2,welcome,intro text,game-text-png/img-2-welcome.png
+3,onboarding,press a button,game-text-png/img-3-onboarding.png
+4,bug,player gets a bug,game-text-png/img-4-bug.png
+6,feature,player completes a feature,game-text-png/img-6-feature.png

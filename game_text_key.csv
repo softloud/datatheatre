@@ -1,7 +1,0 @@
-game_text_line, game_event, description, flavour
-1, "start", "invite player to start game"
-2, "welcome", "intro text"
-3, "meeting", "player attends meeting" 
-4, "bug", "player gets a bug"
-5, "debug", "player debugs a bug"
-6, "feature", "player completes a feature"
