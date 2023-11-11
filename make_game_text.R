@@ -77,3 +77,6 @@ write_csv(game_meta, "game-data/game-text-meta.csv")
 
 # output image meta table
 # - image path
+
+
+game_text_raw[2]

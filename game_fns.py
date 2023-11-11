@@ -35,3 +35,14 @@ def dice_roll(param_prob):
         [True, False],
         p = [param_prob, 1 - param_prob]    
     )   
+    
+class gameEvent():
+    game_event = "started"
+    
+    def set_game_event(ge):
+        game_event = ge
+    
+    def start_game():
+        # start game prompt
+        terminal_text = pg.image.load(text_files[0]).convert()
+    

@@ -43,8 +43,8 @@ running = True
 
 # game variables
 started = False
-event_name = "invited to start"
 outcomes = []
+GameEvent = gameEvent()
 
 # UI 
 # ui_fns.make_ui()
@@ -65,9 +65,8 @@ while running:
             running = False
                 
         if started == False:        
-            # start game prompt
-            terminal_text = pg.image.load(text_files[0]).convert()
-
+            Game.start_game()
+            
         # user starts game
         if event.type == pg.MOUSEBUTTONDOWN and started == False:
             started = True

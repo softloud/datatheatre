@@ -1,6 +1,5 @@
 game_text
 Press a button now to start your journey at Y-Corp.
-Welcome, Employee #LV426306, to your first day at Y-Corp, where it's for us to know why. You are a data scientist; it is your job to press buttons. There is a quietly ragequit button provided for your convenience, should you ever have need. However, Y-Corp are confident you will find pressing buttons for us both exciting and rewarding. Press a button now to proceed to onboarding.   
-You are a data scientist. It is your job to press buttons. Press a button now. 
-After all that, the pipeline was breaking down because of a missing comma. Good thing you were around to fix that. One less bug to worry about. 
-And then there are the blessed days where somehow it comes together, you see the path through all the doors, and chain together a simple, elegant pipeline that just works. New feature implemented. 
+Welcome, Employee #LV426306, to your first day at Y-Corp, where it's for us to know why.\n\nYou are a data scientist; it is your job to press buttons.\n\nYou will find pressing buttons both exciting and rewarding.\n\nPress a button now to proceed to onboarding.   
+Welcome to onboarding.\n\nA quietly ragequit button has been provided for your convenience.\n\nYou are a data scientist.\n\nIt is your job to press buttons.\n\nPress a button now.\n\n 
+You need to prepare a quarterly report with measures from dsiaprate data sources. Do you:\n\nA:Create a reproducible pipeline in Python with unit tests and asserts B:Hack together a solution in a spreadsheet \n\nPress a button now.

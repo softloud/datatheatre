@@ -1,6 +1,5 @@
-game_text_line, game_event, description
-1, "start", "invite player to start game"
-2, "welcome", "intro text"
-3, "onboarding", "press a button" 
-4, "bug", "player gets a bug"
-6, "feature", "player completes a feature"
+game_text_line,game_event,description,category
+1,"start","invite player to start game","flavour"
+2,"welcome","intro text","flavour"
+3,"onboarding","press a button" ,"flavour"
+4,"quarterly","prepare a quarterly report","prompt"
